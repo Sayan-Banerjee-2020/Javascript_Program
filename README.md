@@ -92,6 +92,10 @@ Welcome to my collection of JavaScript programs! This repository contains variou
     - [Link to Code](./Valid_Anagram.js)
     - Detailed usage instructions or explanations.
 
+23. **Tricky Code 5 - One more JavaScript code snippet that's tricky to understand.**
+    - [Link to Code](./trickeyCode5.js)
+    - Detailed usage instructions or explanations.
+
 <!-- Add more programs as necessary -->
 
 ## Usage
