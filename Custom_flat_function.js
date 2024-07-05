@@ -1,7 +1,7 @@
-const arr = [1, 2, 3, { name: "Sayan" }, [4, [5, 6]], 7, 8];
+const arr = [1, 2, 3, { name: "welcome" }, [4, [5, 6]], 7, 8];
 
 const result = flattenArray(arr, []);
-console.log("result", result); // [1,2,3,{name:"Sayan"},4,5,6,7,8]
+console.log("result", result); // expected output = [1,2,3,{name:"welcome"},4,5,6,7,8]
 
 function flattenArray(arr, flattenedArray) {
 
