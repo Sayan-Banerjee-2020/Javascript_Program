@@ -1,0 +1,76 @@
+//index file to remnder the app
+import React from 'react'
+import ReactDom  from 'react-dom';
+import App from "./App"
+
+ReactDom.render(
+    <React.StictMode>
+    <App/>
+    </React.striceMode>,
+    document.getElementById('root')
+    );
+    
+// create the app.js file to connect the counter component
+import React from 'react'
+import {Provider} from 'react-redux';
+imnport {store} from './store';
+import Counter from './cpmponent/counter';
+
+const App =() =>{
+    return (
+        <Provider store={store}>
+        <Counter />
+        </Provider>
+        );
+};
+
+export default App;
+
+
+// crete counter comoponent and connect with redux
+import React from 'react'
+import {useSelector,useDispatch} from 'react-redux'
+import {incxrement} from "/counterSlice"
+
+const Counter =()=>{
+    const count = useSelector((state)=>state.counter.value);
+    const dispatch = useDispatch();
+    
+    const handleClick = () =>{
+        dispatch(increment());
+    };
+    
+    return (
+        <div>
+        <p> count: {count} </p>
+        <button onClick = {handleClick}>Increment</button>
+        </div>
+        );
+};
+
+
+// setup a redux store
+import {configurStore} from "@reduxjs/toolkit";
+import counterReducer from "./counterSlice";
+
+export const store = configurStore({
+    
+    reducer:{
+        counter : counterReducer,
+    },
+});
+
+// create redux slice using redux toolkit
+import {createSlice} from "@reduxjs/toolkit";
+
+export const createSlice = createSlice({
+    
+    name: 'counter',
+    intialState : {value:0},
+    reducer:{
+        increment : (state) =>{
+            state.value += 1;
+        },
+    },
+});
+
